@@ -1,0 +1,39 @@
+{
+  "name": "dsa-language-support",
+  "displayName": "DSA Language Support",
+  "description": "Adds simple highlighting support for the DSA assembly language.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/nullndvoid/dsa-language-support"
+  },
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "dsa",
+        "aliases": [
+          "DSA Assembly",
+          "dsa"
+        ],
+        "extensions": [
+          ".dsa",
+          ".asm",
+          ".S"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "dsa",
+        "scopeName": "source.dsa",
+        "path": "./syntaxes/dsa.tmLanguage.json"
+      }
+    ]
+  }
+}

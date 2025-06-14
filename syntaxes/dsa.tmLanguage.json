@@ -1,0 +1,141 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "DSA Assembly",
+	"patterns": [
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#instructions"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#assembler_helpers"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#registers"
+		},
+		{
+			"include": "#deprecated_or_invalid"
+		},
+		{
+			"include": "#storage_directives"
+		},
+		{
+			"include": "#integers"
+		},
+		{
+			"include": "#reserve_directives"
+		}
+	],
+	"repository": {
+		"instructions": {
+			"patterns": [
+				{
+					"name": "keyword.other.dsa",
+					"match": "\\b(iadd|addi|isub|subi|push|nop|mov|movs|ldb|lb|ldbs|lbs|ldh|lh|ldhs|lhs|ldw|lw|stb|sb|sth|sh|stw|sw|lli|lui|jmp|jeq|jne|jgt|jge|jlt|jle|cmp|inc|dec|shl|shr|add|sub|and|or|not|xor|nand|nor|xnor|int|irt|hlt|jr|lhwmm|lidt)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.dsa",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line",
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.dsa",
+					"match": "//.*"
+				}
+			]
+		},
+		"assembler_helpers": {
+			"name": "keyword.other",
+			"match": "\\b(cll|ret|lwi)\\b"
+		},
+		"reserve_directives": {
+			"match": "(resb|resw|resh)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
+			"captures": {
+				"1": {
+					"name": "keyword.other.directive"
+				},
+				"2": {
+					"name": "variable.other"
+				}
+			}
+		},
+		"storage_directives": {
+			"match": "(dh|db|dw)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
+			"captures": {
+				"1": {
+					"name": "keyword.other.directive"
+				},
+				"2": {
+					"name": "variable.other"
+				}
+			}
+		},
+		"integers": {
+			"name": "constant.numeric",
+			"patterns": [
+				{
+					"name": "constant.numeric.base_10",
+					"match": "\\b([0-9]+)\\b"
+				},
+				{
+					"name": "constant.numeric.base_16",
+					"match": "\\b0x([0-9a-fA-F]+)\\b"
+				},
+				{
+					"name": "constant.numeric.base_8",
+					"match": "\\b0o([0-7]+)\\b"
+				},
+				{
+					"name": "constant.numeric.base_2",
+					"match": "\\b([0-1]+)\\b"
+				}
+			]
+		},
+		"labels": {
+			"name": "entity.name.label",
+			"patterns": [
+				{
+					"name": "entity.name.label.dsa",
+					"match": "^[a-zA-Z_][a-zA-Z0-9_]*:"
+				}
+			]
+		},
+		"registers": {
+			"name": "storage.type.register",
+			"patterns": [
+				{
+					"name": "storage.type.register.dsa",
+					"match": "\\b(rg([0-9]|1[0-5])|acc|spr|bpr|ret|idr|mmr|zero|noreg)\\b"
+				}
+			]
+		},
+		"deprecated_or_invalid": {
+			"name": "invalid.illegal",
+			"patterns": [
+				{
+					"name": "invalid.illegal.dsa",
+					"match": "\\b(imm|mdr|unwrap|psh|push)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.dsa"
+}
