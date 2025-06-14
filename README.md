@@ -8,6 +8,8 @@ Adds support for the DSA assembly language in VSCode.
 
 ![A screenshot of a program highlighted using the extension](screenshot.png)
 
+**Note: this program might not compile, it is just an example of a variety of instructions being highlighted.**
+
 ## Known Issues
 
 We don't have any language server yet so semantic highlighting won't work yet.
