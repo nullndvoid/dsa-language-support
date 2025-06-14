@@ -1,8 +1,9 @@
 {
   "name": "dsa-language-support",
-  "displayName": "DSA Language Support",
+  "displayName": "DSA Assembly",
   "description": "Adds simple highlighting support for the DSA assembly language.",
   "version": "0.1.0",
+  "publisher": "dsa-tooling",
   "repository": {
     "url": "https://github.com/nullndvoid/dsa-language-support"
   },
