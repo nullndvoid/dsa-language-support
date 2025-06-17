@@ -4,6 +4,7 @@
   "description": "Adds simple highlighting support for the DSA assembly language.",
   "version": "0.1.0",
   "publisher": "dsa-tooling",
+  "icon": "DSAComplicatedLogoWhite128.png",
   "repository": {
     "url": "https://github.com/nullndvoid/dsa-language-support"
   },
@@ -17,6 +18,10 @@
     "languages": [
       {
         "id": "dsa",
+        "icon": {
+          "dark": "DSALangIconDarkMode.svg",
+          "light": "DSALangIconLightMode.svg"
+        },
         "aliases": [
           "DSA Assembly",
           "dsa"
