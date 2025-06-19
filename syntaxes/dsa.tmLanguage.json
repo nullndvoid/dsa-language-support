@@ -79,7 +79,7 @@
 					"name": "keyword.other.directive"
 				},
 				"2": {
-					"name": "variable.other"
+					"name": "variable.other.dsa"
 				}
 			}
 		},
@@ -90,7 +90,7 @@
 					"name": "keyword.other.directive"
 				},
 				"2": {
-					"name": "variable.other"
+					"name": "variable.other.dsa"
 				}
 			}
 		},
