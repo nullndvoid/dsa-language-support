@@ -24,3 +24,7 @@ We don't have any language server yet so semantic highlighting won't work yet.
 
 - Binary literals start with `0b`.
 - Default file icons! The light mode one is not currently working unfortunately.
+
+### 0.1.2
+
+- Update syntax file.

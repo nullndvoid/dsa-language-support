@@ -2,7 +2,7 @@
   "name": "dsa-language-support",
   "displayName": "DSA Assembly",
   "description": "Adds simple highlighting support for the DSA assembly language.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "dsa-tooling",
   "icon": "DSAComplicatedLogoWhite128.png",
   "repository": {
