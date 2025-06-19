@@ -6,31 +6,37 @@
 			"include": "#strings"
 		},
 		{
-			"include": "#instructions"
-		},
-		{
 			"include": "#comments"
-		},
-		{
-			"include": "#assembler_helpers"
-		},
-		{
-			"include": "#labels"
-		},
-		{
-			"include": "#registers"
-		},
-		{
-			"include": "#deprecated_or_invalid"
-		},
-		{
-			"include": "#storage_directives"
 		},
 		{
 			"include": "#integers"
 		},
 		{
 			"include": "#reserve_directives"
+		},
+		{
+			"include": "#storage_directives"
+		},
+		{
+			"include": "#jump_label_directives"
+		},
+		{
+			"include": "#instructions"
+		},
+		{
+			"include": "#assembler_helpers"
+		},
+		{
+			"include": "#registers"
+		},
+		{
+			"include": "#labels"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#deprecated_or_invalid"
 		}
 	],
 	"repository": {
@@ -64,16 +70,16 @@
 		},
 		"assembler_helpers": {
 			"name": "keyword.other",
-			"match": "\\b(call|ret|return|lwi|push|pop|include)\\b"
+			"match": "\\b(call|return|lwi|push|pop|include)\\b"
 		},
 		"reserve_directives": {
 			"match": "(resb|resw|resh)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
 			"captures": {
 				"1": {
-					"name": "keyword.other.directive"
+					"name": "keyword.other.dsa"
 				},
 				"2": {
-					"name": "variable.other"
+					"name": "variable.other.dsa"
 				}
 			}
 		},
@@ -81,10 +87,21 @@
 			"match": "(dh|db|dw)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
 			"captures": {
 				"1": {
-					"name": "keyword.other.directive"
+					"name": "keyword.other.dsa"
 				},
 				"2": {
-					"name": "variable.other"
+					"name": "variable.other.dsa"
+				}
+			}
+		},
+		"jump_label_directives": {
+			"match": "(jmp|jeq|jne|jgt|jge|jlt|jle)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
+			"captures": {
+				"1": {
+					"name": "keyword.other.dsa"
+				},
+				"2": {
+					"name": "entity.name.label.dsa"
 				}
 			}
 		},
@@ -92,19 +109,19 @@
 			"name": "constant.numeric",
 			"patterns": [
 				{
-					"name": "constant.numeric.base_10",
+					"name": "constant.numeric.base_10.dsa",
 					"match": "\\b([0-9]+)\\b"
 				},
 				{
-					"name": "constant.numeric.base_16",
+					"name": "constant.numeric.base_16.dsa",
 					"match": "\\b0x([0-9a-fA-F]+)\\b"
 				},
 				{
-					"name": "constant.numeric.base_8",
+					"name": "constant.numeric.base_8.dsa",
 					"match": "\\b0o([0-7]+)\\b"
 				},
 				{
-					"name": "constant.numeric.base_2",
+					"name": "constant.numeric.base_2.dsa",
 					"match": "\\b0b([0-1]+)\\b"
 				}
 			]
@@ -124,6 +141,15 @@
 				{
 					"name": "storage.type.register.dsa",
 					"match": "\\b(rg([0-9]|[a-f])|acc|spr|bpr|ret|idr|mmr|zero|noreg|pcx)\\b"
+				}
+			]
+		},
+		"variables": {
+			"name": "variable.other",
+			"patterns": [
+				{
+					"name": "variable.other.dsa",
+					"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b"
 				}
 			]
 		},
