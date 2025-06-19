@@ -28,3 +28,8 @@ We don't have any language server yet so semantic highlighting won't work yet.
 ### 0.1.2
 
 - Update syntax file.
+
+
+### 0.2.0
+
+- Update syntax file to detect labels after `call`.
