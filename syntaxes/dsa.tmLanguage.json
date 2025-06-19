@@ -38,7 +38,7 @@
 			"patterns": [
 				{
 					"name": "keyword.other.dsa",
-					"match": "\\b(iadd|addi|isub|subi|push|nop|mov|movs|ldb|lb|ldbs|lbs|ldh|lh|ldhs|lhs|ldw|lw|stb|sb|sth|sh|stw|sw|lli|lui|jmp|jeq|jne|jgt|jge|jlt|jle|cmp|inc|dec|shl|shr|add|sub|and|or|not|xor|nand|nor|xnor|int|irt|hlt|jr|lhwmm|lidt)\\b"
+					"match": "\\b(nop|mov|movs|ldb|ldbs|ldh|ldhs|ldw|stb|sth|stw|lli|lui|jmp|jeq|jne|jgt|jge|jlt|jle|cmp|inc|dec|shl|shr|add|addi|sub|subi|and|or|not|xor|nand|nor|xnor|int|irt|hlt|lhwmm|lidt)\\b"
 				}
 			]
 		},
@@ -64,7 +64,7 @@
 		},
 		"assembler_helpers": {
 			"name": "keyword.other",
-			"match": "\\b(cll|ret|lwi)\\b"
+			"match": "\\b(call|return|lwi|push|pop|include)\\b"
 		},
 		"reserve_directives": {
 			"match": "(resb|resw|resh)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
@@ -123,7 +123,7 @@
 			"patterns": [
 				{
 					"name": "storage.type.register.dsa",
-					"match": "\\b(rg([0-9]|1[0-5])|acc|spr|bpr|ret|idr|mmr|zero|noreg)\\b"
+					"match": "\\b(rg([0-9]|[a-f])|acc|spr|bpr|ret|idr|mmr|zero|noreg|pcx)\\b"
 				}
 			]
 		},
@@ -132,7 +132,7 @@
 			"patterns": [
 				{
 					"name": "invalid.illegal.dsa",
-					"match": "\\b(imm|mdr|unwrap|psh|push)\\b"
+					"match": "\\b(imm|psh|mdr|mar|sts|cir)\\b"
 				}
 			]
 		}
