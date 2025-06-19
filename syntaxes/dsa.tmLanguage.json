@@ -64,7 +64,7 @@
 		},
 		"assembler_helpers": {
 			"name": "keyword.other",
-			"match": "\\b(call|return|lwi|push|pop|include)\\b"
+			"match": "\\b(call|ret|return|lwi|push|pop|include)\\b"
 		},
 		"reserve_directives": {
 			"match": "(resb|resw|resh)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
