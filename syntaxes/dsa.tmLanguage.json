@@ -95,7 +95,7 @@
 			}
 		},
 		"jump_label_directives": {
-			"match": "(jmp|jeq|jne|jgt|jge|jlt|jle)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
+			"match": "(jmp|jeq|jne|jgt|jge|jlt|jle|call)[ \\t]+([a-zA-Z_][a-zA-Z0-9_]*)",
 			"captures": {
 				"1": {
 					"name": "keyword.other.dsa"
